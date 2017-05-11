@@ -12,9 +12,34 @@ const WebpackRTLPlugin = require('webpack-rtl-plugin');
  |
  */
 
-mix.sass('resources/assets/sass/frontend/app.scss', 'public/css/frontend.css')
+mix.styles([
+        'resources/assets/allure-theme/css/style.css',
+        'resources/assets/allure-theme/css/default.css',
+        'resources/assets/allure-theme/css/color-option-allure.css',
+        'resources/assets/allure-theme/plugins/jquery-ui/jquery-ui.min.css',
+        'resources/assets/allure-theme/plugins/bootstrap/css/bootstrap.min.css',
+        'resources/assets/allure-theme/plugins/font-awesome/css/font-awesome.min.css',
+        'resources/assets/allure-theme/plugins/selectbox/select_option1.css',
+        'resources/assets/allure-theme/plugins/owl-carousel/owl.carousel.min.css',
+        'resources/assets/allure-theme/plugins/fancybox/jquery.fancybox.pack.css',
+        'resources/assets/allure-theme/plugins/isotope/isotope.min.css',
+        'resources/assets/allure-theme/plugins/datepicker/datepicker.min.css',
+        'resources/assets/allure-theme/plugins/bootstrapthumbnail/bootstrap-thumbnail.css'
+    ], 'public/css/frontend.css')
     .sass('resources/assets/sass/backend/app.scss', 'public/css/backend.css')
     .js([
+        'resources/assets/allure-theme/plugins/jquery/jquery.min.js',
+        'resources/assets/allure-theme/plugins/jquery-ui/jquery-ui.min.js',
+        'resources/assets/allure-theme/plugins/bootstrap/js/bootstrap.min.js',
+        'resources/assets/allure-theme/plugins/selectbox/jquery.selectbox-0.1.3.min.js',
+        'resources/assets/allure-theme/plugins/owl-carousel/owl.carousel.min.js',
+        'resources/assets/allure-theme/plugins/isotope/isotope.min.js',
+        'resources/assets/allure-theme/plugins/fancybox/jquery.fancybox.pack.js',
+        'resources/assets/allure-theme/plugins/isotope/isotope-triger.min.js',
+        'resources/assets/allure-theme/plugins/smoothscroll/SmoothScroll.min.js',
+        'resources/assets/allure-theme/plugins/datepicker/bootstrap-datepicker.min.js',
+        'resources/assets/allure-theme/plugins/syotimer/jquery.syotimer.min.js',
+        'resources/assets/allure-theme/js/custom.js',
         'resources/assets/js/frontend/app.js',
         'resources/assets/js/plugin/sweetalert/sweetalert.min.js',
         'resources/assets/js/plugins.js'

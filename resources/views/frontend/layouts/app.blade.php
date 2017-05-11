@@ -19,9 +19,9 @@
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         @langRTL
-            {{ Html::style(getRtlCss(mix('css/frontend.css'))) }}
+            {{ Html::style(getRtlCss(mix('css/frontend.css')), [], true) }}
         @else
-            {{ Html::style(mix('css/frontend.css')) }}
+            {{ Html::style(mix('css/frontend.css'), [], true) }}
         @endif
 
         @yield('after-styles')
@@ -46,7 +46,7 @@
 
         <!-- Scripts -->
         @yield('before-scripts')
-        {!! Html::script(mix('js/frontend.js')) !!}
+        {!! Html::script(mix('js/frontend.js'), [], true) !!}
         @yield('after-scripts')
 
         @include('includes.partials.ga')
