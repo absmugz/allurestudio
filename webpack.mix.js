@@ -11,6 +11,10 @@ const WebpackRTLPlugin = require('webpack-rtl-plugin');
  | file for the application as well as bundling up all the JS files.
  |
  */
+ 
+
+mix.autoload({});
+ 
 
 mix.styles([
         'resources/assets/allure-theme/css/style.css',
@@ -54,6 +58,8 @@ mix.styles([
             new WebpackRTLPlugin('/css/[name].rtl.css')
         ]
     });
+    
+    
 
 if(mix.config.inProduction){
     mix.version();

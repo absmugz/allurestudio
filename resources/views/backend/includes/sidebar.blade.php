@@ -63,7 +63,23 @@
                     </li>
                 </ul>
             </li>
+            
             @endauth
+            
+             <li class="{{ active_class(Active::checkUriPattern('admin/style')) }}">
+                <a href="{{ route('admin.style') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Style Management</span>
+                </a>
+            </li>
+            
+                <li class="{{ active_class(Active::checkUriPattern('admin/stylist')) }}">
+                <a href="{{ route('admin.stylist') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Stylist Management</span>
+                </a>
+            </li>
+            
 
             <li class="{{ active_class(Active::checkUriPattern('admin/log-viewer*')) }} treeview">
                 <a href="#">
