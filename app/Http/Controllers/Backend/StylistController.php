@@ -26,6 +26,7 @@ class StylistController extends Controller
     public function create()
     {
         //
+        return view('backend.stylist.create');
     }
 
     /**

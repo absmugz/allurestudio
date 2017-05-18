@@ -26,6 +26,7 @@ class StyleController extends Controller
     public function create()
     {
         //
+         return view('backend.style.create');
     }
 
     /**
