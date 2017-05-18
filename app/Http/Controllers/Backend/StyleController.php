@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Style;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class StyleController extends Controller
 {
@@ -15,7 +17,13 @@ class StyleController extends Controller
     public function index()
     {
         //
-        return view('backend.style.index');
+        
+        $styles = Style::orderBy('created_at', 'asc')->get();
+
+    return view('backend.style.index', [
+        'styles' => $styles
+    ]);
+        //return view('backend.style.index');
     }
 
     /**
@@ -38,6 +46,26 @@ class StyleController extends Controller
     public function store(Request $request)
     {
         //
+        
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|max:255',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect('/admin/style/create')
+            ->withInput()
+            ->withErrors($validator);
+    }
+    
+    // Create The Style
+    
+    $style = new Style;
+    $style->name = $request->name;
+    $style->save();
+
+    return redirect('/admin/style');
+    
+    
     }
 
     /**
@@ -83,5 +111,8 @@ class StyleController extends Controller
     public function destroy($id)
     {
         //
+         Style::findOrFail($id)->delete();
+
+    return redirect('/admin/style');
     }
 }
